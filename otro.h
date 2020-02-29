@@ -37,7 +37,7 @@ string FormatoOperacion(string x,string b, string operador ){
   linea="("+ x + ") " + doperador + " ("+ b + ")" + " = " + to_string(resultado);
 
   return linea;
-
+  //intento de commit2
 
 }
 
