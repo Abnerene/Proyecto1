@@ -7,9 +7,7 @@ using namespace std;
 
 int main() {
 
-  string tabla[2];
-  tabla[0]="0123456789";
-  tabla[1]="By/8T&QEPF";
+  string tabla="By/8T&QEPF";
 
   string entrada,salida,cantidad1,cantidad2,numero1,numero2,operador,resultado;
   int b,d,i,largo,t=0;
@@ -47,7 +45,7 @@ if(t>0){
   while(i<largo){//while primer número "desencripta el número1"
 
       string letra=numero1.substr(i,1);
-      b= tabla[1].find(letra);
+      b= tabla.find(letra);
       cantidad1=cantidad1.insert(i,to_string(b));
       i++;
      
@@ -59,7 +57,7 @@ if(t>0){
   while(i<largo){//while del segundo número "desencripta el número2"
 
       string letra=numero2.substr(i,1);
-      b= tabla[1].find(letra);
+      b= tabla.find(letra);
       cantidad2=cantidad2.insert(i,to_string(b));
       i++;
 
