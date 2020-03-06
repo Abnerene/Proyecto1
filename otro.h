@@ -14,22 +14,22 @@ string FormatoOperacion(string x,string b, string operador ){
   int resultado=0;
   string linea,doperador;
 
-  if(operador=="C"){    
+  if(operador==suma){    
     resultado=stoi(x) + stoi(b);
     doperador="+";
   }
 
-  if(operador=="c"){
+  else if(operador==resta){
     resultado=stoi(x) - stoi(b);
     doperador="-";
   }
 
-  if(operador=="#"){
+  else if(operador==multi){
     resultado=stoi(x) * stoi(b);
     doperador="*";
   }
 
-  if(operador=="@"){
+  else if(operador==divi){
     resultado=stoi(x) / stoi(b);
     doperador="/";
   }
@@ -37,7 +37,7 @@ string FormatoOperacion(string x,string b, string operador ){
   linea="("+ x + ") " + doperador + " ("+ b + ")" + " = " + to_string(resultado);
 
   return linea;
-  //intento de commit2
+
 
 }
 

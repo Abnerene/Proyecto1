@@ -3,13 +3,17 @@
 #include <fstream>
 
 using namespace std;
+
+
+string suma,resta,multi,divi;
+
 #include "otro.h"
 
 int main() {
 
-  string tabla="By/8T&QEPF";
+  string tabla;
 
-  string entrada,salida,cantidad1,cantidad2,numero1,numero2,operador,resultado;
+  string entrada,salida,cantidad1,cantidad2,numero1,numero2,operador,resultado,mlinea;
   int b,d,i,largo,t=0;
   string linea;
 
@@ -28,6 +32,26 @@ int main() {
 
 while(getline(archivoEntrada,linea))
 {
+
+if(t==0){
+ 
+  for(int s=0;s<=9;s++)
+  {
+    int n=linea.find(" ");
+    mlinea=Cortar(linea,n);
+    linea=linea.erase(0,n+1);
+    tabla=tabla+mlinea;
+  } 
+
+    suma=linea.substr(0,1);
+    resta=linea.substr(2,1);
+    multi=linea.substr(4,1);
+    divi=linea.substr(6,1);
+
+}
+
+
+
 
 if(t>0){
 
@@ -51,7 +75,7 @@ if(t>0){
      
   }
 
-
+  
   i=0;
   largo=numero2.length();//largo del segundo número
   while(i<largo){//while del segundo número "desencripta el número2"
@@ -81,5 +105,5 @@ archivoSalida.close();
 
 return 0;
 
-//intento de commit1
+
 }
